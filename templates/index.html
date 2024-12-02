@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Person Profile Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/json.min.js"></script>
+
+    <script>
+      hljs.highlightAll();
+    </script>
+  </head>
+  <body class="px-4">
+    <div class="form-group p-3">
+      <h4>Select API Call:</h4>
+      <div class="d-flex">
+        <div class="form-check mr-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="apiCall"
+            id="mockApi"
+            value="mock"
+            checked
+            onchange="toggleApiCall()"
+          />
+          <label class="form-check-label" for="mockApi">Demo API Call</label>
+        </div>
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="apiCall"
+            id="actualApi"
+            value="actual"
+            onchange="toggleApiCall()"
+          />
+          <label class="form-check-label" for="actualApi">Real API Call</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actual API call -->
+    <pre id="real-api-call" class="custom-dark-bg p-3 border rounded d-none">
+<div>
+  <span class="custom-text-green">curl </span>\
+  <span>  -G \</span>
+  <span>  -H <span class="custom-text-yellow">"Authorization: Bearer<input id="api_key" class="px-2 py-1" type="text" placeholder="API_KEY">"</span> \</span>
+  <span class="custom-text-yellow">  'https://nubela.co/proxycurl/api/v2/linkedin' </span>\
+  <span>  --data-urlencode <span class="custom-text-yellow">'linkedin_profile_url=<input id="linkedin_profile_url" class="px-2 py-1" style="width:420px;" type="text" placeholder="https://www.linkedin.com/in/profile_url/">'</span></span>
+</div>
+
+</pre>
+
+    <!-- End of Actual API call -->
+
+    <!-- Mock API call -->
+    <pre id="mock-api-call" class="custom-dark-bg p-3 border rounded">
+<div>
+  <span class="custom-text-green">curl </span>\
+  <span>  -G \</span>
+  <span>  -H <span class="custom-text-yellow">"Authorization: Bearer demo-bearer-token"</span> \</span>
+  <span class="custom-text-yellow">  'https://nubela.co/proxycurl/api/v2/linkedin' </span>\
+  <span>  --data-urlencode <span class="custom-text-yellow">'linkedin_profile_url=https://www.linkedin.com/in/williamhgates'</span></span>
+</div>
+
+</pre>
+    <!-- End of Mock API call -->
+    <button class="btn mt-2 custom-bg-purple text-white" onclick="handleRun()">
+      Run
+    </button>
+
+    <button class="btn mt-2 custom-bg-purple text-white">
+      <a class="text-white" rel="noopener noreferrer" target="_blank" href="https://nubela.co/proxycurl/docs#people-api-person-profile-endpoint">Code it myself</a>
+    </button>
+
+    <div id="response">
+      <h4 id="response-header" class="d-none mt-2">Response:</h4>
+      <pre id="mock-response-wrapper" class="language-json d-none">
+        <code id="mock-response">
+{
+  "public_identifier": "williamhgates",
+  "profile_pic_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/person/williamhgates/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aa4604d314a93976ab9c468ea6f0a4e3338c37f24ea556eac7cc94d005158344",
+  "background_cover_image_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/person/williamhgates/cover?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f26614defb55c0567fc8170d9e2a2b70057f454ce73c681d158bd96016ff8fed",
+  "first_name": "Bill",
+  "last_name": "Gates",
+}
+        </code>
+      </pre>
+
+      <pre id="actual-response-wrapper" class="language-json d-none">
+        <code id="actual-response">
+        </code>
+      </pre>
+    </div>
+
+    <script>
+      function toggleApiCall() {
+        if (document.getElementById("actualApi").checked) {
+          document.getElementById("real-api-call").classList.remove("d-none");
+          document.getElementById("mock-api-call").classList.add("d-none");
+        } else {
+          document.getElementById("real-api-call").classList.add("d-none");
+          document.getElementById("mock-api-call").classList.remove("d-none");
+        }
+
+        const mockResponseWrapper = document.getElementById(
+          "mock-response-wrapper",
+        );
+        const actualResponseWrapper = document.getElementById(
+          "actual-response-wrapper",
+        );
+        document.getElementById("response-header").classList.add("d-none");
+        mockResponseWrapper.classList.add("d-none");
+        actualResponseWrapper.classList.add("d-none");
+      }
+
+      const live_api_response = {
+        public_identifier: "williamhgates",
+        profile_pic_url:
+          "https://s3.us-west-000.backblazeb2.com/proxycurl/person/williamhgates/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aa4604d314a93976ab9c468ea6f0a4e3338c37f24ea556eac7cc94d005158344",
+        background_cover_image_url:
+          "https://s3.us-west-000.backblazeb2.com/proxycurl/person/williamhgates/cover?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f26614defb55c0567fc8170d9e2a2b70057f454ce73c681d158bd96016ff8fed",
+        first_name: "Bill",
+        last_name: "Gates",
+      };
+
+      const handleRun = async () => {
+        if (document.getElementById("actualApi").checked) {
+          document.getElementById("response-header").classList.remove("d-none");
+          const responseContent = JSON.stringify(live_api_response, null, 2);
+          const apiKey = document.getElementById("api_key").value;
+          const linkedinProfileUrl = document.getElementById(
+            "linkedin_profile_url",
+          ).value;
+
+          const res = await fetch(
+            `http://127.0.0.1:5000/person_profile?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
+            {
+              method: "GET"
+            },
+          );
+      
+   
+         const profileResponse = await res.json();
+
+         console.log(profileResponse);
+  
+
+          const wrapper = document.getElementById("actual-response-wrapper");
+          wrapper.children[0].innerHTML = "";
+          wrapper.children[0].innerHTML = JSON.stringify(profileResponse, null, 2);
+  
+
+          // const wrapper = document.getElementById("actual-response-wrapper");
+          wrapper.classList.remove("d-none"); // Show again
+          if (!wrapper.classList.contains("hljs")) {
+            // Check if already highlighted
+            hljs.highlightElement(wrapper); // Highlight the content
+          }
+        } else {
+          document.getElementById("response-header").classList.remove("d-none");
+          document
+            .getElementById("mock-response-wrapper")
+            .classList.remove("d-none");
+        }
+      };
+    </script>
+
+    <style>
+      * {
+        font-size: 1rem;
+      }
+
+      @keyframes blink {
+        0% {
+          border-bottom-color: transparent;
+        }
+        50% {
+          border-bottom-color: rgb(209, 154, 102);
+        }
+        100% {
+          border-bottom-color: transparent;
+        }
+      }
+      input {
+        margin: 5px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid transparent; 
+        animation: blink 1s step-end infinite; /* Apply blinking animation */
+        background-color: transparent;
+        border-radius: 0;
+        color: rgb(209, 154, 102);
+      }
+      .custom-dark-bg {
+        background-color: #282c34;
+        color: rgb(171 178 191/1);
+      }
+      .custom-text-green {
+        color: rgb(152, 195, 121);
+      }
+      .custom-text-yellow {
+        color: rgb(209, 154, 102);
+      }
+      .custom-bg-purple {
+        background-color: rgb(79 70 229);
+      }
+
+
+      pre {
+        padding: 2rem 0.5rem 1rem 0.5rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+    </style>
+  </body>
+</html>
