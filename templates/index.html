@@ -147,7 +147,7 @@
           ).value;
 
           const res = await fetch(
-            `http://127.0.0.1:5000/person_profile?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
+            `/person_profile?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
             {
               method: "GET"
             },
