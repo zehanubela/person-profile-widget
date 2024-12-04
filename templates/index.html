@@ -349,7 +349,7 @@
           runButton.innerHTML = "Loading...";
 
           const res = await fetch(
-            `http://localhost:5000/person_profile?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
+            `/person_profile?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
             {
               method: "GET",
             },
