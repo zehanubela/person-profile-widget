@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Person Profile Demo" />
+    <meta name="keywords" content="Person Profile Demo" />
     <title>Person Profile Demo</title>
     <link
       rel="stylesheet"
@@ -13,17 +15,15 @@
       href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css"
     />
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-
     <!-- and it's easy to individually load additional languages -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/json.min.js"></script>
-
     <script>
       hljs.highlightAll();
     </script>
   </head>
   <body class="px-4">
-    <div class="form-group p-3">
-      <h4>Select API Call:</h4>
+    <div class="form-group">
+      <h4 class="mt-4">Select API Call:</h4>
       <div class="d-flex">
         <div class="form-check mr-3">
           <input
@@ -37,7 +37,6 @@
           />
           <label class="form-check-label" for="mockApi">Demo API Call</label>
         </div>
-
         <div class="form-check">
           <input
             class="form-check-input"
@@ -51,9 +50,8 @@
         </div>
       </div>
     </div>
-
     <!-- Actual API call -->
-    <pre id="real-api-call" class="custom-dark-bg p-3 border rounded d-none">
+    <pre id="real-api-call" class="custom-dark-bg border rounded d-none">
 <div>
   <span class="custom-text-green">curl </span>\
   <span>  -G \</span>
@@ -63,11 +61,9 @@
 </div>
 
 </pre>
-
     <!-- End of Actual API call -->
-
     <!-- Mock API call -->
-    <pre id="mock-api-call" class="custom-dark-bg p-3 border rounded">
+    <pre id="mock-api-call" class="custom-dark-bg border rounded">
 <div>
   <span class="custom-text-green">curl </span>\
   <span>  -G \</span>
@@ -78,247 +74,57 @@
 
 </pre>
     <!-- End of Mock API call -->
-    <button class="btn mt-2 custom-bg-purple text-white" onclick="handleRun()">
+    <button id="run-button" class="btn mt-2 custom-bg-purple text-white" onclick="handleRun()">
       Run
     </button>
-
     <button class="btn mt-2 custom-bg-purple text-white">
-      <a class="text-white" rel="noopener noreferrer" target="_blank" href="https://nubela.co/proxycurl/docs#people-api-person-profile-endpoint">Code it myself</a>
+      <a
+        class="text-white"
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://nubela.co/proxycurl/docs#people-api-person-profile-endpoint"
+        >See docs</a
+      >
     </button>
-
     <div id="response">
-      <h4 id="response-header" class="d-none mt-2">Response:</h4>
-      <pre id="mock-response-wrapper" class="language-json d-none">
+      <h4 class="mt-5">Response:</h4>
+      <pre id="mock-response-wrapper">
         <code id="mock-response">
-{
-  "public_identifier": "williamhgates",
-  "profile_pic_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/person/williamhgates/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aa4604d314a93976ab9c468ea6f0a4e3338c37f24ea556eac7cc94d005158344",
-  "background_cover_image_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/person/williamhgates/cover?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f26614defb55c0567fc8170d9e2a2b70057f454ce73c681d158bd96016ff8fed",
-  "first_name": "Bill",
-  "last_name": "Gates",
-  "full_name": "Bill Gates",
-  "follower_count": 36570137,
-  "occupation": "Co-chair at Bill & Melinda Gates Foundation",
-  "headline": "Chair, Gates Foundation and Founder, Breakthrough Energy",
-  "summary": "Chair of the Bill & Melinda Gates Foundation. Founder of Breakthrough Energy. Co-founder of Microsoft. Voracious reader. Avid traveler. Active blogger.",
-  "country": "US",
-  "country_full_name": "United States",
-  "city": "Seattle",
-  "state": "Washington",
-  "experiences": [
-      {
-          "starts_at": {
-              "day": 1,
-              "month": 1,
-              "year": 2000
-          },
-          "ends_at": null,
-          "company": "Bill & Melinda Gates Foundation",
-          "company_linkedin_profile_url": "https://www.linkedin.com/company/bill-&-melinda-gates-foundation",
-          "company_facebook_profile_url": null,
-          "title": "Co-chair",
-          "description": null,
-          "location": null,
-          "logo_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/bill-%26-melinda-gates-foundation/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=11ebb4c28e23e392dc585ba3e0364275e0d743abdc8ced56e0f7ba4c70914876"
-      },
-      {
-          "starts_at": {
-              "day": 1,
-              "month": 1,
-              "year": 2015
-          },
-          "ends_at": null,
-          "company": "Breakthrough Energy ",
-          "company_linkedin_profile_url": "https://www.linkedin.com/company/breakthrough-energy",
-          "company_facebook_profile_url": null,
-          "title": "Founder",
-          "description": null,
-          "location": null,
-          "logo_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/breakthrough-energy/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=268c56a58d4cf4f6f81d5994f3dfb238c0323408f1e1762e0a9bbc59c0f7d343"
-      },
-      {
-          "starts_at": {
-              "day": 1,
-              "month": 1,
-              "year": 1975
-          },
-          "ends_at": null,
-          "company": "Microsoft",
-          "company_linkedin_profile_url": "https://www.linkedin.com/company/microsoft",
-          "company_facebook_profile_url": null,
-          "title": "Co-founder",
-          "description": null,
-          "location": null,
-          "logo_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/microsoft/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=f1310ca592a4afb5b6452cd82c764748103dfbf7fdf05547f638ac1fce0669e2"
-      }
-  ],
-  "education": [
-      {
-          "starts_at": {
-              "day": 1,
-              "month": 1,
-              "year": 1973
-          },
-          "ends_at": {
-              "day": 31,
-              "month": 12,
-              "year": 1975
-          },
-          "field_of_study": null,
-          "degree_name": null,
-          "school": "Harvard University",
-          "school_linkedin_profile_url": "https://www.linkedin.com/company/1646/",
-          "school_facebook_profile_url": null,
-          "description": null,
-          "logo_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/harvard-university/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=d1087bca3060f48cc8d06e66c87f15969c1e902139a3e3a6f0c31f724cd77b8b",
-          "grade": null,
-          "activities_and_societies": null
-      },
-      {
-          "starts_at": null,
-          "ends_at": null,
-          "field_of_study": null,
-          "degree_name": null,
-          "school": "Lakeside School",
-          "school_linkedin_profile_url": "https://www.linkedin.com/company/30288/",
-          "school_facebook_profile_url": null,
-          "description": null,
-          "logo_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/lakeside-school/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=29051f491160016880df53d4b670ddb10ce73657428b37fb29a68c1cb059cb5b",
-          "grade": null,
-          "activities_and_societies": null
-      }
-  ],
-  "languages": [],
-  "languages_and_proficiencies": [],
-  "accomplishment_organisations": [],
-  "accomplishment_publications": [],
-  "accomplishment_honors_awards": [],
-  "accomplishment_patents": [],
-  "accomplishment_courses": [],
-  "accomplishment_projects": [],
-  "accomplishment_test_scores": [],
-  "volunteer_work": [],
-  "certifications": [],
-  "connections": 8,
-  "people_also_viewed": [
-      {
-          "link": "https://www.linkedin.com/in/stephencurry30?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAw4D5sB4ZMefUY22SQECAv5kgQQKM4Cwh4",
-          "name": "Stephen Curry",
-          "summary": "NBA Athlete | Producer, Investor, Entrepreneur, Philanthropist, Gold Medalist",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/rbranson?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAwp1RMBxG26M3Qkhm4klqLNr1bIplo6GhY",
-          "name": "Richard Branson",
-          "summary": "Founder at Virgin Group",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/vancityreynolds?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADib0tEByzvgsS0kMMiPk4liOa1qZs3Q4pE",
-          "name": "Ryan Reynolds",
-          "summary": "Part-Time Actor, Business Owner",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/andy-jassy-8b1615?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAAXP8UB4_GzJNUYcEDdAM6IBQNKZYe-WOU",
-          "name": "Andy Jassy",
-          "summary": "President and CEO at Amazon",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/narendramodi?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABBhhiABVwqIoiMz90f7wLjjl8xvtPe3u3c",
-          "name": "Narendra Modi",
-          "summary": "Prime Minister of India",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/nitin-gadkari-5b7b2b227?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADjxI5sB8zh1KYWtStYxnRHjvVa6ckeE8Eo",
-          "name": "Nitin Gadkari",
-          "summary": "Minister of Road Transport & Highways, Government of India at Government of India",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/justintrudeau?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAA2CDF8BlyDd8jHcvIujtyUS6YDtx6EOzJ4",
-          "name": "Justin Trudeau",
-          "summary": "Prime Minister of Canada | Premier ministre du Canada",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/mr-beast?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADnl1jgBdlHVvRibBu9Fm0M77z4oYsyVQ0k",
-          "name": "Jimmy Donaldson",
-          "summary": "On a mission to be the biggest Youtuber of all time.",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/rishi-sunak?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC_m1aoBCuAl3tCOFJZho4TVOR6w9XqnbH4",
-          "name": "Rishi Sunak",
-          "summary": "MP for Richmond and Northallerton. Conservatives leader. Former Prime Minister of the United Kingdom",
-          "location": null
-      },
-      {
-          "link": "https://www.linkedin.com/in/jenhsunhuang?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABMznFkB_XPgkYHnUl33kIHTWt1DtMAV6Pg",
-          "name": "Jensen Huang",
-          "summary": "Founder and CEO, NVIDIA",
-          "location": null
-      }
-  ],
-  "recommendations": [],
-  "activities": [],
-  "similarly_named_profiles": [],
-  "articles": [],
-  "groups": [],
-  "skills": [
-      "Epson"
-  ],
-  "gender": null,
-  "birth_date": null,
-  "industry": "Philanthropy",
-  "extra": null,
-  "interests": [
-      "Bridge",
-      "Developing New Vaccines",
-      "Energy Policy",
-      "Eradicating Polio",
-      "Philanthropy and Volunteerism",
-      "Reading",
-      "Research and Development",
-      "Taking Interesting Courses Online",
-      "Technology and Innovation",
-      "Tennis",
-      "Traveling With Family"
-  ],
-}
+          {
+            "response": "API response will appear here."
+          }
         </code>
-      </pre>
-
+    </pre>
       <pre id="actual-response-wrapper" class="language-json d-none">
         <code id="actual-response">
+          {
+            "response": "API response will appear here."
+          }
         </code>
       </pre>
     </div>
-
     <script>
       function toggleApiCall() {
-        if (document.getElementById("actualApi").checked) {
-          document.getElementById("real-api-call").classList.remove("d-none");
-          document.getElementById("mock-api-call").classList.add("d-none");
-        } else {
-          document.getElementById("real-api-call").classList.add("d-none");
-          document.getElementById("mock-api-call").classList.remove("d-none");
-        }
-
         const mockResponseWrapper = document.getElementById(
           "mock-response-wrapper",
         );
         const actualResponseWrapper = document.getElementById(
           "actual-response-wrapper",
         );
-        document.getElementById("response-header").classList.add("d-none");
-        mockResponseWrapper.classList.add("d-none");
-        actualResponseWrapper.classList.add("d-none");
+        if (document.getElementById("actualApi").checked) {
+          document.getElementById("real-api-call").classList.remove("d-none");
+          document.getElementById("mock-api-call").classList.add("d-none");
+          mockResponseWrapper.classList.add("d-none");
+          actualResponseWrapper.classList.remove("d-none");
+        } else {
+          document.getElementById("real-api-call").classList.add("d-none");
+          document.getElementById("mock-api-call").classList.remove("d-none");
+          actualResponseWrapper.classList.add("d-none");
+          mockResponseWrapper.classList.remove("d-none");
+        }
       }
 
-      const live_api_response = {
+      const mockResponsePerson = {
         public_identifier: "williamhgates",
         profile_pic_url:
           "https://s3.us-west-000.backblazeb2.com/proxycurl/person/williamhgates/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aa4604d314a93976ab9c468ea6f0a4e3338c37f24ea556eac7cc94d005158344",
@@ -326,50 +132,258 @@
           "https://s3.us-west-000.backblazeb2.com/proxycurl/person/williamhgates/cover?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f26614defb55c0567fc8170d9e2a2b70057f454ce73c681d158bd96016ff8fed",
         first_name: "Bill",
         last_name: "Gates",
+        full_name: "Bill Gates",
+        follower_count: 36570137,
+        occupation: "Co-chair at Bill & Melinda Gates Foundation",
+        headline: "Chair, Gates Foundation and Founder, Breakthrough Energy",
+        summary:
+          "Chair of the Bill & Melinda Gates Foundation. Founder of Breakthrough Energy. Co-founder of Microsoft. Voracious reader. Avid traveler. Active blogger.",
+        country: "US",
+        country_full_name: "United States",
+        city: "Seattle",
+        state: "Washington",
+        experiences: [
+          {
+            starts_at: {
+              day: 1,
+              month: 1,
+              year: 2000,
+            },
+            ends_at: null,
+            company: "Bill & Melinda Gates Foundation",
+            company_linkedin_profile_url:
+              "https://www.linkedin.com/company/bill-&-melinda-gates-foundation",
+            company_facebook_profile_url: null,
+            title: "Co-chair",
+            description: null,
+            location: null,
+            logo_url:
+              "https://s3.us-west-000.backblazeb2.com/proxycurl/company/bill-%26-melinda-gates-foundation/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=11ebb4c28e23e392dc585ba3e0364275e0d743abdc8ced56e0f7ba4c70914876",
+          },
+          {
+            starts_at: {
+              day: 1,
+              month: 1,
+              year: 2015,
+            },
+            ends_at: null,
+            company: "Breakthrough Energy ",
+            company_linkedin_profile_url:
+              "https://www.linkedin.com/company/breakthrough-energy",
+            company_facebook_profile_url: null,
+            title: "Founder",
+            description: null,
+            location: null,
+            logo_url:
+              "https://s3.us-west-000.backblazeb2.com/proxycurl/company/breakthrough-energy/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=268c56a58d4cf4f6f81d5994f3dfb238c0323408f1e1762e0a9bbc59c0f7d343",
+          },
+          {
+            starts_at: {
+              day: 1,
+              month: 1,
+              year: 1975,
+            },
+            ends_at: null,
+            company: "Microsoft",
+            company_linkedin_profile_url:
+              "https://www.linkedin.com/company/microsoft",
+            company_facebook_profile_url: null,
+            title: "Co-founder",
+            description: null,
+            location: null,
+            logo_url:
+              "https://s3.us-west-000.backblazeb2.com/proxycurl/company/microsoft/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=f1310ca592a4afb5b6452cd82c764748103dfbf7fdf05547f638ac1fce0669e2",
+          },
+        ],
+        education: [
+          {
+            starts_at: {
+              day: 1,
+              month: 1,
+              year: 1973,
+            },
+            ends_at: {
+              day: 31,
+              month: 12,
+              year: 1975,
+            },
+            field_of_study: null,
+            degree_name: null,
+            school: "Harvard University",
+            school_linkedin_profile_url:
+              "https://www.linkedin.com/company/1646/",
+            school_facebook_profile_url: null,
+            description: null,
+            logo_url:
+              "https://s3.us-west-000.backblazeb2.com/proxycurl/company/harvard-university/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=d1087bca3060f48cc8d06e66c87f15969c1e902139a3e3a6f0c31f724cd77b8b",
+            grade: null,
+            activities_and_societies: null,
+          },
+          {
+            starts_at: null,
+            ends_at: null,
+            field_of_study: null,
+            degree_name: null,
+            school: "Lakeside School",
+            school_linkedin_profile_url:
+              "https://www.linkedin.com/company/30288/",
+            school_facebook_profile_url: null,
+            description: null,
+            logo_url:
+              "https://s3.us-west-000.backblazeb2.com/proxycurl/company/lakeside-school/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20241119%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20241119T085300Z&X-Amz-Expires=1800&X-Amz-SignedHeaders=host&X-Amz-Signature=29051f491160016880df53d4b670ddb10ce73657428b37fb29a68c1cb059cb5b",
+            grade: null,
+            activities_and_societies: null,
+          },
+        ],
+        languages: [],
+        languages_and_proficiencies: [],
+        accomplishment_organisations: [],
+        accomplishment_publications: [],
+        accomplishment_honors_awards: [],
+        accomplishment_patents: [],
+        accomplishment_courses: [],
+        accomplishment_projects: [],
+        accomplishment_test_scores: [],
+        volunteer_work: [],
+        certifications: [],
+        connections: 8,
+        people_also_viewed: [
+          {
+            link: "https://www.linkedin.com/in/stephencurry30?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAw4D5sB4ZMefUY22SQECAv5kgQQKM4Cwh4",
+            name: "Stephen Curry",
+            summary:
+              "NBA Athlete | Producer, Investor, Entrepreneur, Philanthropist, Gold Medalist",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/rbranson?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAwp1RMBxG26M3Qkhm4klqLNr1bIplo6GhY",
+            name: "Richard Branson",
+            summary: "Founder at Virgin Group",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/vancityreynolds?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADib0tEByzvgsS0kMMiPk4liOa1qZs3Q4pE",
+            name: "Ryan Reynolds",
+            summary: "Part-Time Actor, Business Owner",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/andy-jassy-8b1615?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAAAXP8UB4_GzJNUYcEDdAM6IBQNKZYe-WOU",
+            name: "Andy Jassy",
+            summary: "President and CEO at Amazon",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/narendramodi?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABBhhiABVwqIoiMz90f7wLjjl8xvtPe3u3c",
+            name: "Narendra Modi",
+            summary: "Prime Minister of India",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/nitin-gadkari-5b7b2b227?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADjxI5sB8zh1KYWtStYxnRHjvVa6ckeE8Eo",
+            name: "Nitin Gadkari",
+            summary:
+              "Minister of Road Transport & Highways, Government of India at Government of India",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/justintrudeau?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAA2CDF8BlyDd8jHcvIujtyUS6YDtx6EOzJ4",
+            name: "Justin Trudeau",
+            summary: "Prime Minister of Canada | Premier ministre du Canada",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/mr-beast?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADnl1jgBdlHVvRibBu9Fm0M77z4oYsyVQ0k",
+            name: "Jimmy Donaldson",
+            summary: "On a mission to be the biggest Youtuber of all time.",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/rishi-sunak?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC_m1aoBCuAl3tCOFJZho4TVOR6w9XqnbH4",
+            name: "Rishi Sunak",
+            summary:
+              "MP for Richmond and Northallerton. Conservatives leader. Former Prime Minister of the United Kingdom",
+            location: null,
+          },
+          {
+            link: "https://www.linkedin.com/in/jenhsunhuang?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABMznFkB_XPgkYHnUl33kIHTWt1DtMAV6Pg",
+            name: "Jensen Huang",
+            summary: "Founder and CEO, NVIDIA",
+            location: null,
+          },
+        ],
+        recommendations: [],
+        activities: [],
+        similarly_named_profiles: [],
+        articles: [],
+        groups: [],
+        skills: ["Epson"],
+        gender: null,
+        birth_date: null,
+        industry: "Philanthropy",
+        extra: null,
+        interests: [
+          "Bridge",
+          "Developing New Vaccines",
+          "Energy Policy",
+          "Eradicating Polio",
+          "Philanthropy and Volunteerism",
+          "Reading",
+          "Research and Development",
+          "Taking Interesting Courses Online",
+          "Technology and Innovation",
+          "Tennis",
+          "Traveling With Family",
+        ],
       };
 
       const handleRun = async () => {
         if (document.getElementById("actualApi").checked) {
-          document.getElementById("response-header").classList.remove("d-none");
-          const responseContent = JSON.stringify(live_api_response, null, 2);
           const apiKey = document.getElementById("api_key").value;
           const linkedinProfileUrl = document.getElementById(
             "linkedin_profile_url",
           ).value;
 
+          const runButton = document.getElementById("run-button");
+          runButton.disabled = true;
+          runButton.innerHTML = "Loading...";
+
           const res = await fetch(
-            `/person_profile?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
+            `http://localhost:5000/person_profile?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
             {
-              method: "GET"
+              method: "GET",
             },
           );
-      
-   
-         const profileResponse = await res.json();
 
-         console.log(profileResponse);
-  
+          const profileResponse = await res.json();
 
           const wrapper = document.getElementById("actual-response-wrapper");
-          wrapper.children[0].innerHTML = "";
-          wrapper.children[0].innerHTML = JSON.stringify(profileResponse, null, 2);
-  
 
-          // const wrapper = document.getElementById("actual-response-wrapper");
-          wrapper.classList.remove("d-none"); // Show again
-          if (!wrapper.classList.contains("hljs")) {
-            // Check if already highlighted
-            hljs.highlightElement(wrapper); // Highlight the content
-          }
+          runButton.disabled = false;
+          runButton.innerHTML = "Run";
+          wrapper.innerHTML = "";
+          wrapper.innerHTML = JSON.stringify(profileResponse, null, 2);
+          hljs.highlightElement(wrapper);
+
+          wrapper.classList.remove("d-none");
         } else {
-          document.getElementById("response-header").classList.remove("d-none");
+          const mockResponseWrapper = document.getElementById(
+            "mock-response-wrapper",
+          );
+
+          mockResponseWrapper.innerHTML = "";
+          mockResponseWrapper.innerHTML = JSON.stringify(
+            mockResponsePerson,
+            null,
+            2,
+          );
+          hljs.highlightElement(mockResponseWrapper);
           document
             .getElementById("mock-response-wrapper")
             .classList.remove("d-none");
         }
       };
     </script>
-
     <style>
       * {
         font-size: 1rem;
@@ -391,8 +405,8 @@
         border-radius: 5px;
         outline: none;
         border: none;
-        border-bottom: 1px solid transparent; 
-        animation: blink 1s step-end infinite; /* Apply blinking animation */
+        border-bottom: 1px solid transparent;
+        animation: blink 1s step-end infinite;
         background-color: transparent;
         border-radius: 0;
         color: rgb(209, 154, 102);
@@ -411,11 +425,22 @@
         background-color: rgb(79 70 229);
       }
 
-
       pre {
+        margin: 0;
+      }
+
+      #actual-response-wrapper {
         padding: 2rem 0.5rem 1rem 0.5rem;
         white-space: pre-wrap;
+        background-color: #282c34;
         word-wrap: break-word;
+      }
+
+      #mock-response-wrapper {
+        padding: 2rem 0.5rem 1rem 0.5rem;
+        background-color: #282c34;
+        margin-top: 0;
+        padding-top: 0;
       }
     </style>
   </body>
