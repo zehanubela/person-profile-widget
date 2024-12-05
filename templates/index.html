@@ -366,7 +366,7 @@
           runButton.innerHTML = "Loading...";
 
           const res = await fetch(
-            `{{BASE_URL}}/widget/person_profile_form?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
+            `/widget/person_profile_form?linkedin_profile_url=${linkedinProfileUrl}&api_key=${apiKey}`,
             {
               method: "GET",
             },
