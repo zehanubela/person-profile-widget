@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 24</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-24" fill="#0EE09A">
+            <path d="M100,50 C100,77.6141667 77.6141667,100 50,100 C22.3858333,100 0,77.6141667 0,50 C0,22.3858333 22.3858333,0 50,0 C77.6141667,0 100,22.3858333 100,50" id="Fill-1" opacity="0.118257068"></path>
+            <path d="M30,70 L58.2352941,50 L30,30 L30,70 Z M62.9411765,30 L62.9411765,70 L70,70 L70,30 L62.9411765,30 Z" id="Shape" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

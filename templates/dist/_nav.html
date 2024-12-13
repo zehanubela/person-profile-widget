@@ -1,0 +1,253 @@
+<div class="fixed-top">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container-fluid">
+            <a href="{{BASE_URL}}" class="navbar-brand">
+              {% if logo %}
+                <img src="{{ logo }}" alt="proxycurl logo" class="navbar-brand-img">
+              {% else %}
+                <img src="{{BASE_URL}}/media/dist/Proxycurl-Logotype-Primary-No%20Nubela.1dc8284c.png" alt="proxycurl logo" class="navbar-brand-img">
+              {% endif %}
+            </a>
+            <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+                    <i class="fe fe-x"></i>
+                </button>
+                <ul class="navbar-nav ml-auto mr-auto">
+                    <li class="nav-item dropdown">
+                        <a id="navbarPages" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
+                            Products  <i class="fe fe-chevron-down"></i>
+                        </a>
+                        <div aria-labelledby="navbarPages" class="dropdown-menu dropdown-menu-lg">
+                            <div class="row no-gutters">
+                                <div class="col-12">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 col-lg-6">
+                                            <h6 class="dropdown-header">
+                                                <img width="24" alt="database icon" src="{{BASE_URL}}/media/dist/database_icon.8dda680e.svg" class="icon">
+                                                    LinkDB
+                                                
+                                            </h6>
+                                            <a href="{{ url_for('landing.linkdb') }}" class="dropdown-item mb-5">
+                                                Database of public <br> LinkedIn profiles
+                                            </a>
+                                            <h6 class="dropdown-header">
+                                                <img width="24" alt="database icon" src="{{BASE_URL}}/media/dist/table.f3f70d6f.svg" class="icon">
+                                                  Spreadsheet Addon
+                                                
+                                            </h6>
+                                            <a href="https://sapiengraph.com/?utm_campaign=own_platforms&utm_source=proxycurl_website&utm_medium=platforms&utm_content=promo_text" target="_blank" class="dropdown-item mb-5">
+                                              Sapiengraph - B2B Enrichment <br> in Google Sheets
+                                            </a>
+                                            <h6 class="dropdown-header">
+                                                <a href="{{ url_for('landing.free_tools') }}">
+                                                    <img width="24" alt="emoji icon" src="{{BASE_URL}}/media/dist/emoji_smiley.c5ee525a.svg" class="icon">
+                                                        Free Tools
+                                                    
+                                                </a>
+                                            </h6>
+                                            <a href="{{ url_for('landing.disposable_email_checker_api_landing') }}" class="dropdown-item">
+                                                Disposable Email Checker
+                                            </a>
+                                            <a href="{{ url_for('landing.docs') }}#people-api-person-profile-picture-endpoint" class="dropdown-item">
+                                                Person Profile Picture API
+                                            </a>
+                                            <a href="{{ url_for('landing.docs') }}#company-api-company-profile-picture-endpoint" class="dropdown-item mb-5 mb-lg-0">
+                                                Company Profile Picture API
+                                            </a>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <h6 class="dropdown-header">
+                                                <img width="24" alt="Proxycurl logo" src="{{BASE_URL}}/media/dist/proxycurl_logo_blue.8f574115.svg" class="icon">
+                                                    Proxycurl API
+                                                
+                                            </h6>
+                                            <a href="{{ url_for('landing.people_api_landing') }}" class="dropdown-item">
+                                                People API
+                                            </a>
+                                            <a href="{{ url_for('landing.linkedin_api_company_landing') }}" class="dropdown-item">
+                                                Company API
+                                            </a>
+                                            <a href="{{ url_for('landing.contact_api_landing') }}" class="dropdown-item">
+                                                Contact API
+                                            </a>
+                                            <a href="{{ url_for('landing.reverse_email_lookup') }}" class="dropdown-item">
+                                                ᴸ Reverse Email Lookup API
+                                            </a>
+                                            <a href="{{ url_for('landing.email_lookup') }}" class="dropdown-item">
+                                                ᴸ Work Email Lookup API
+                                            </a>
+                                            <a href="{{ url_for('landing.jobs_api_landing') }}" class="dropdown-item">
+                                                Jobs API
+                                            </a>
+                                            <a href="{{ url_for('landing.school_api') }}" class="dropdown-item">
+                                              School API
+                                            </a>
+                                            <a href="{{ url_for('landing.search_api_landing') }}" class="dropdown-item">
+                                              Search API
+                                            </a>
+                                            {% if config.get('ENABLE_CUSTOMER_API') %}
+                                            <a href="{{ url_for('landing.customer_api_landing') }}" class="dropdown-item">
+                                              Customer API
+                                            </a>
+                                            {% endif %}
+                                            <a href="{{ url_for('landing.docs') }}" class="dropdown-item mb-5">
+                                                API Documentation
+                                                <i class="fe fe-arrow-right"></i>
+                                            </a>
+                                            <a class="dropdown-item text-primary font-weight-bold mb-5 mb-md-0" href="{{ url_for('landing.products') }}">
+                                              See all products <i class="fe fe-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarAccount" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                          Solutions <i class="fe fe-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="navbarSolutions">
+                          <div class="row no-gutters">
+                            <div class="col-12">
+                              <div class="row no-gutters">
+                                <div class="col-12 col-lg-6">
+                                  <!-- Heading -->
+                                  <h6 class="dropdown-header">
+                                    <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M22 20C22 21.1046 21.1046 22 20 22C18.8955 22 18 21.1046 18 20C18 18.8954 18.8955 18 20 18C21.1046 18 22 18.8954 22 20ZM4.00001 15C2.89546 15 2.00001 15.8954 2.00001 17C2.00001 18.1046 2.89546 19 4.00001 19C5.10456 19 6.00001 18.1046 6.00001 17C6.00001 15.8954 5.10456 15 4.00001 15ZM20 6.00001C21.1046 6.00001 22 5.10456 22 4.00001C22 2.8954 21.1046 2.00001 20 2.00001C18.8955 2.00001 18 2.8954 18 4.00001C18 5.10456 18.8955 6.00001 20 6.00001ZM15.3079 14.2474C15.7441 13.6067 16 12.8335 16 12C16 11.1665 15.7441 10.3933 15.3079 9.75263L18.1188 6.94172C17.6927 6.66828 17.3317 6.30726 17.0583 5.88117L14.2474 8.69208C13.6067 8.25592 12.8335 8 12 8C11.1665 8 10.3933 8.25592 9.75262 8.69208L7.57568 6.51514C7.83874 6.06903 8 5.55542 8 5C8 3.34314 6.65686 2 5 2C3.34314 2 2 3.34314 2 5C2 6.65686 3.34314 8 5 8C5.55542 8 6.06903 7.83875 6.51514 7.57568L8.69208 9.75262C8.25592 10.3933 8 11.1665 8 12C8 12.5099 8.10461 12.9934 8.27856 13.4418L6.49737 14.5551C6.8482 14.9134 7.11236 15.3501 7.28436 15.8315L9.0755 14.712C9.80603 15.4996 10.8411 16 12 16C12.8335 16 13.6066 15.744 14.2473 15.3078L17.0583 18.1188C17.3317 17.6927 17.6927 17.3317 18.1188 17.0583L15.3079 14.2474Z" fill="#325EEA"></path>
+                                      </svg>
+                                      Use Cases
+                                  </h6>
+
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="{{ url_for('landing.linkedin_landing') }}">
+                                      LinkedIn Scraper API
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="{{ url_for('solutions.alternative_data_investment') }}">
+                                      Investment Signals
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="{{ url_for('solutions.accelerate_growth') }}">
+                                      Accelerating Growth Startups
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="{{ url_for('solutions.hr_tech') }}">
+                                      Data for HR Tech
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="https://nubela.co/blog/the-proxycurl-success-story-hiring-a-marketing-manager-through-automated-recruitment-and-executive-search/">
+                                      Automated Recruitment
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="{{ url_for('solutions.sales_marketing_automation_api') }}">
+                                      Sales and Marketing automation
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="https://nubela.co/blog/how-to-automatically-track-linkedin-job-changes/">
+                                      Identifying Buyer Intent Data
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="https://nubela.co/blog/crm-data-enrichment-the-easiest-way-to-increase-your-sales-conversion-rates/">
+                                      CRM Data Enrichment
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright">
+                                    <a class="dropdown-link" href="{{ url_for('solutions.clearbit_alternative') }}">
+                                      Clearbit alternative
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright mb-5">
+                                    <a class="dropdown-link" href="{{ url_for('solutions.peopledatalabs_pdl_alternative') }}">
+                                        People Data Labs alternative  
+                                    </a>
+                                  </div>
+                                  <div class="dropdown-item dropright mt-5 mb-6 mb-lg-0">
+                                    <a class="dropdown-link text-primary font-weight-bold" href="{{ url_for('landing.use_cases_landing') }}">
+                                      See all use-cases <i class="fe fe-arrow-right"></i>
+                                    </a>
+                                  </div>
+                                </div> 
+                                <div class="col-12 col-lg-6">
+
+                                  <!-- Heading -->
+                                  <h6 class="dropdown-header">
+                                    <svg width="24" height="24" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M12.374 19.939l5.849-8.773A.75.75 0 0017.599 10H13V4.477a.75.75 0 00-1.374-.416l-5.849 8.773A.75.75 0 006.401 14H11v5.523a.75.75 0 001.374.416z" fill="#335EEA"></path></g></svg> Demos
+                                  </h6>
+          
+                                  <!-- List -->
+                                  <a class="dropdown-item" href="{{ url_for('landing.monitoring_job_changes') }}">
+                                    Track Job Changes
+                                  </a>
+
+                                  <a class="dropdown-item" href="{{ url_for('demo.reverse_email_lookup') }}">
+                                    Reverse Email Lookup
+                                  </a>
+
+                                  <a class="dropdown-item mb-5" href="{{ url_for('demo.linkedin_profile_viewer') }}">
+                                   LinkedIn Profile Viewer
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarPricing" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+                        Pricing <i class="fe fe-chevron-down"></i>
+                      </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarPricing">
+                      <li class="dropdown-item">
+                        <a class="dropdown-link" href="{{ url_for('landing.pricing') }}">
+                          Proxycurl API Pricing
+                        </a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a class="dropdown-link" href="{{ url_for('landing.linkdb_pricing') }}">
+                          LinkDB Pricing
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a id="navbarBlog" href="https://nubela.co/blog" class="nav-link">
+                      Blog
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a id="navbarFAQ" href="https://nubela.co/blog/tag/faq" class="nav-link">
+                      FAQ
+                    </a>
+                  </li>
+                </ul>
+                {% if current_user.is_authenticated is sameas true %}
+                  <a href="{{ url_for('dashboard.dashboard') }}" target="_blank" class="navbar-btn btn btn-sm btn-primary lift">
+                    Dashboard
+                  </a>
+                {% else %}
+                  <div ml-auto class="text-center">
+                    <a href="{{ url_for('auth.login') }}" target="_blank" class="btn btn-sm btn-link">
+                      Log in
+                    </a>
+                  </div>
+                  <a href="{{ url_for('auth.register_with_password') }}" target="_blank" class="navbar-btn btn btn-sm btn-primary lift">
+                    Sign up
+                  </a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</div>

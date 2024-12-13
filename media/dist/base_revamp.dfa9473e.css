@@ -1,0 +1,131 @@
+.hover {
+  opacity: .5;
+}
+
+.hover:hover, .hover-parent:hover > .hover, .hover-active .hover {
+  opacity: 1;
+}
+
+.contact-img {
+  margin-bottom: -48px;
+}
+
+.bg-wave {
+  -webkit-background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+.blur {
+  filter: blur(3px);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -khtml-user-select: none;
+}
+
+table tr:first-child th:first-child {
+  border-top-left-radius: .5rem !important;
+}
+
+table tr:first-child th:last-child {
+  border-top-right-radius: .5rem !important;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: .5rem !important;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: .5rem !important;
+}
+
+.text-python {
+  color: #3fb422;
+}
+
+.text-python-hl {
+  color: #acc267;
+}
+
+.text-hl {
+  color: #f92672;
+}
+
+.text-hl-yellow {
+  color: #fbbf24;
+}
+
+.caption {
+  font-size: 12px;
+  color: #869ab8 !important;
+}
+
+.highlight-block {
+  background: #1e1e1e;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 2px 6px 1px #00000040;
+}
+
+.highlight-block pre, .highlight-block table {
+  color: #fff;
+  background: #1e1e1e;
+}
+
+pre {
+  -ms-word-wrap: normal;
+  word-wrap: normal;
+  overflow-wrap: normal;
+  white-space: pre;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.bg-default {
+  background-image: url("linkdb-left.5ad3204c.png"), url("linkdb-right.6448c90f.png");
+}
+
+.bg-usa {
+  background-image: url("linkdb-left-usa.7d6ba02e.png"), url("linkdb-right-usa.e132bec7.png");
+}
+
+.bg-france {
+  background-image: url("linkdb-left-france.d6c7e73a.png"), url("linkdb-right-france.5c4bf6b0.png");
+}
+
+.bg-india {
+  background-image: url("linkdb-left-india.afa358d8.png"), url("linkdb-right-india.9519d210.png");
+}
+
+.bg-spain {
+  background-image: url("linkdb-left-spain.be0aa78d.png"), url("linkdb-right-spain.399375e9.png");
+}
+
+.bg-sweden {
+  background-image: url("linkdb-left-sweden.cbdf8dd1.png"), url("linkdb-right-sweden.bdaee2b5.png");
+}
+/*# sourceMappingURL=base_revamp.dfa9473e.css.map */

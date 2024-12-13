@@ -1,0 +1,32 @@
+<form action="{{ url_for('auth.login') }}" method="post" data-parsley-validate>
+    <div class="form-group" style="text-align: left;">
+        <input id="email" type="email" data-parsley-type="email" data-parsley-required name="email"
+            placeholder="work@email.com" class="form-control"></input>
+        <input type="text" name="is_captcha_loaded" value="" data-parsley-required data-parsley-error-message="Please wait for Captcha to load and do click on it."  style="display:none;">
+    </div>
+    <script type="text/javascript" async defer>
+        // looping because there can be multiple recaptcha forms on the page
+        var captchaCallback = function () {
+            for (var i = 0; i < document.getElementsByName('is_captcha_loaded').length; i++) {
+                document.getElementsByName('is_captcha_loaded')[i].value = 'true';
+            }
+        };
+        var onLoad = function () {
+            for (var i = 0; i < document.getElementsByName('recaptcha-spinner').length; i++) {
+                var spinnerParent = document.getElementsByName('recaptcha-spinner')[i].parentNode;
+                spinnerParent.classList.remove('d-flex');
+                spinnerParent.style.display = 'none';
+            }
+        }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onLoad" async defer></script>
+    <div class="d-flex align-items-center justify-content-center">
+        <div name="recaptcha-spinner" class="spinner-border" role="status"> <span class="sr-only">Loading...</span> </div>
+        <span class="ml-2">Loading Captcha...</span>
+    </div>
+    <div class="g-recaptcha mt-3" data-sitekey="{{ RECAPTCHA_SITE_KEY }}" style="display: inline-block;"
+        data-callback="captchaCallback"></div>
+    <button type="submit" class="btn btn-primary btn-md btn-block text-center mt-2">
+        Get a trial API key
+    </button>
+</form>

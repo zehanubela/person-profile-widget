@@ -1,0 +1,58 @@
+<section class="py-7 pb-md-10 pt-md-10 bg-light">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-md">
+                <h3 class="mb-0">Featured Articles</h3>
+                <p class="mb-0 text-muted">
+                    Here's what we've been up to recently.
+                </p>
+            </div>
+
+            <div class="col-12 col-md-auto">
+                <a href="https://nubela.co/blog/" target="_blank" class="btn btn-sm btn-outline-gray-300 d-none d-md-inline">
+                    View all
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for article in fetch_articles_from_rss() %}
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="card mb-6 mb-lg-0 shadow-light-lg lift lift-lg">
+                    <a href="{{ article.link }}" class="card-img-top">
+                        <img src="{{ article.img_url }}" alt="..." class="card-img-top" loading="lazy">
+                        <div class="position-relative">
+                            <div class="shape shape-bottom shape-fluid-x svg-shim text-white">
+                                <svg viewbox="0 0 2880 480" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"></path></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="{{ article.link }}" class="card-body">
+                        <h3>{{ article.title }}</h3>
+                        <p class="mb-0 text-muted">
+                            {{ article.description }}
+                        </p>
+                    </a>
+
+                    <a href="{{ article.link }}" class="card-meta mt-auto">
+                        <hr class="card-meta-divider">
+                        <div class="avatar avatar-sm mr-2">
+                            {% if article.avatar is string and article.avatar|length %}
+                                <img src="{{ article.avatar }}" alt="..." class="avatar-img rounded-circle" loading="lazy">
+                            {% else %}
+                                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="avatar-img rounded-circle" style="background: #e4eaed"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"></path></g></svg>
+                            {% endif %}
+
+                        </div>
+                        <h6 class="text-uppercase text-muted mr-2 mb-0">{{ article.creator }}</h6>
+                        <p class="h6 text-uppercase text-muted mb-0 ml-auto">
+                            {{ article.estimated_reading_time }} MIN READ
+                        </p>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

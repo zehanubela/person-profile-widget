@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block meta %}
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      {% if not meta_title %}
+        {% set meta_title = "Enrich your B2B data with Proxycurl's APIs" %}
+      {% endif %}
+      {% if not meta_desc %}
+        {% set meta_desc = "Enrich your B2B data with Proxycurl's APIs! Built by developers, for developers. CCPA- & GDPR- compliant." %}
+      {% endif %}
+      <meta name="title" content="{{ meta_title }}">
+      <meta name="description" content="{{ meta_desc }}">
+      <meta name="author" content="Nubela">
+      <!-- Open Graph / Facebook -->
+      <meta property="og:site_name" content="Proxycurl">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="{{ meta_title }}">
+      <meta property="og:description" content="{{ meta_desc }}">
+      {% if meta_og_image %}
+        <meta property="og:image" content="{{ meta_og_image }}">
+      {% else %}
+        <meta property="og:image" content="{{ url_for('static', filename='imgs/TLC_Proxycurl_Meta_Image.png', _external=True) }}">
+      {% endif %}
+      {% if meta_og_url %}<meta property="og:url" content="{{ meta_og_url }}">{% endif %}
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta property="twitter:title" content="{{ meta_title }}">
+      <meta property="twitter:description" content="{{ meta_desc }}">
+      {% if meta_twitter_image %}
+        <meta name="twitter:image" content="{{ meta_twitter_image }}">
+      {% else %}
+        <meta name="twitter:image" content="{{ url_for('static', filename='imgs/TLC_Proxycurl_Meta_Image.png', _external=True) }}">
+      {% endif %}
+    {% endblock meta %}
+    {% if favicon %}
+      <link rel="icon" type="image/png" sizes="96x96" href="{{ favicon }}">
+    {% else %}
+      <link rel="icon" type="image/png" sizes="96x96" href="{{BASE_URL}}/media/dist/favicon-96x96.48191bed.png">
+    {% endif %}
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{BASE_URL}}/media/dist/ms-icon-144x144.6fea69fa.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>
+      {% block title %}
+        {% if title %}
+          {{ title }}
+        {% else %}
+          Proxycurl
+        {% endif %}
+      {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{{BASE_URL}}/media/dist/base_revamp.06f80289.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/neuicons/css/neu.min.css">
+<link rel="stylesheet" href="{{BASE_URL}}/media/dist/base_revamp.ddb01dc0.css">
+<link rel="stylesheet" href="{{BASE_URL}}/media/dist/base_revamp.35089132.css">
+<link rel="stylesheet" href="{{BASE_URL}}/media/dist/base_revamp.007edaaa.css">
+{% block base_revamp_css %}
+  <link rel="stylesheet" href="{{BASE_URL}}/media/dist/base_revamp.92d97a86.css">
+{% endblock base_revamp_css %}
+<link href="{{BASE_URL}}/media/dist/base_revamp.29ac2336.css" rel="stylesheet" type="text/css">
+<link href="{{BASE_URL}}/media/dist/base_revamp.dfa9473e.css" rel="stylesheet" type="text/css">
+<script defer data-domain="{{BACKGROUND_HOSTNAME}}" data-api="https://{{ BACKGROUND_HOSTNAME }}{{ BASE_URL }}/4404e5d15315e7788eee86d064a30e96/api/event" src="https://{{ BACKGROUND_HOSTNAME }}{{ BASE_URL }}/4404e5d15315e7788eee86d064a30e96/js/script.js"></script>
+<script>!function(t, e) {
+    var o, n, p, r;
+    e.__SV || (window.posthog = e, e._i = [], e.init = function(i, s, a) {
+        function g(t, e) {
+            var o = e.split(".");
+            2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function() {
+                t.push([
+                    e
+                ].concat(Array.prototype.slice.call(arguments, 0)));
+            };
+        }
+        (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r);
+        var u = e;
+        for(void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function(t) {
+            var _$e = "posthog";
+            return "posthog" !== a && (_$e += "." + a), t || (_$e += " (stub)"), _$e;
+        }, u.people.toString = function() {
+            return u.toString(1) + ".people (stub)";
+        }, o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "), n = 0; n < o.length; n++)g(u, o[n]);
+        e._i.push([
+            i,
+            s,
+            a
+        ]);
+    }, e.__SV = 1);
+}(document, window.posthog || []);
+posthog.init("phc_r8vYufX9FTPF1oYProeI9dPGEd2WKF3MZAjnPOv1Qdf", {
+    api_host: "https://{{ BACKGROUND_HOSTNAME }}{{ BASE_URL }}/9bbeHp3SPWsJHXJGvRD6MGRHhgWeQFVy",
+    autocapture: {
+        event_allowlist: [
+            "click"
+        ]
+    }
+});
+
+</script>
+{% if current_user.is_authenticated is sameas true %}
+  <script>posthog.identify("{{ current_user.id }}");
+
+</script>
+{% endif %}
+{% if request.args.get('is_logout') == 'True' %}<script>posthog.reset();
+
+</script>{% endif %}
+{% if ENABLE_CELLO_REFERRAL is sameas true %}
+  <script type="module" src="{{ CELLO_SCRIPT_URL }}" async></script>
+  <script type="module" src="{{ CELLO_ATTRIBUTION_URL }}" async></script>
+  {% if current_user.is_authenticated is sameas true %}
+    <script>window.cello = window.cello || {
+    cmd: []
+};
+window.cello.cmd.push(function(cello) {
+    return cello.boot({
+        productId: "{{ CELLO_PRODUCT_ID }}",
+        token: "{{ CELLO_AUTH_TOKEN }}",
+        language: "en",
+        productUserDetails: {
+            email: "{{ current_user.email }}"
+        }
+    }).catch(function(error) {
+        console.error("Failed to boot cello:", error);
+    });
+});
+
+</script>
+  {% endif %}
+{% endif %}
+{% block head %}
+{% endblock head %}
+</head>
+<body>
+  {% block body %}
+  {% endblock body %}
+  <script src="{{BASE_URL}}/media/dist/base_revamp.22a1874c.js" defer></script>
+  <script src="{{BASE_URL}}/media/dist/base_revamp.3f126648.js" defer></script>
+  <script src="{{BASE_URL}}/media/dist/base_revamp.31e85fe3.js" defer></script>
+  <script src="{{BASE_URL}}/media/dist/base_revamp.bbcae435.js" defer></script>
+  <script src="{{BASE_URL}}/media/dist/base_revamp.37bb0517.js" defer></script>
+  {% block loadlater %}
+  {% endblock loadlater %}
+</body>
+</html>
