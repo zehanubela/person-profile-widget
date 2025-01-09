@@ -1,0 +1,458 @@
+{
+  "linkedin_internal_id": "3991822",
+  "description": "Airtable is the no-code app platform that empowers people closest to the work to accelerate their most critical business processes. We believe in the transformative power of equipping anyone to build the software applications they wish existed – regardless of their technical skill. That’s why more than 500,000 organizations, including 80% of the Fortune 100, rely on Airtable for collaborative work management and citizen development to transform how work gets done.  The result?  Faster innovation, happier customers, enterprise governance, and a modern work experience for teams and departments. We’re hiring! Visit airtable.com/careers to learn more.",
+  "website": "https://airtable.com",
+  "industry": "Software Development",
+  "company_size": [
+      501,
+      1000
+  ],
+  "company_size_on_linkedin": 821,
+  "hq": {
+      "country": "US",
+      "city": "San Francisco",
+      "postal_code": "94111",
+      "line_1": "1 Front St",
+      "is_hq": true,
+      "state": "California"
+  },
+  "company_type": "PRIVATELY_HELD",
+  "founded_year": null,
+  "specialities": [],
+  "locations": [
+      {
+          "country": "US",
+          "city": "San Francisco",
+          "postal_code": "94111",
+          "line_1": "1 Front St",
+          "is_hq": true,
+          "state": "California"
+      },
+      {
+          "country": "US",
+          "city": "San Francisco",
+          "postal_code": "94102",
+          "line_1": "799 Market St",
+          "is_hq": false,
+          "state": "California"
+      },
+      {
+          "country": "US",
+          "city": "New York",
+          "postal_code": "10016",
+          "line_1": "6 E 32nd St",
+          "is_hq": false,
+          "state": null
+      },
+      {
+          "country": "US",
+          "city": "Austin",
+          "postal_code": "78701",
+          "line_1": "501 Congress Ave",
+          "is_hq": false,
+          "state": "Texas"
+      },
+      {
+          "country": "GB",
+          "city": "London",
+          "postal_code": null,
+          "line_1": null,
+          "is_hq": false,
+          "state": null
+      }
+  ],
+  "name": "Airtable",
+  "tagline": null,
+  "universal_name_id": "airtable",
+  "profile_pic_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/airtable/profile?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20250108%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20250108T220302Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=03faffc4bc0e8694abef48116925181b6907c96bf2c67f680b6f2499818c24cc",
+  "background_cover_image_url": "https://s3.us-west-000.backblazeb2.com/proxycurl/company/airtable/cover?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=0004d7f56a0400b0000000001%2F20250108%2Fus-west-000%2Fs3%2Faws4_request&X-Amz-Date=20250108T220302Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=04f1a0b91ced019cae59ec71dcf96b5970dd1cf012b810268d476dd857ad6f6e",
+  "search_id": "3991822",
+  "similar_companies": [
+      {
+          "name": "Notion",
+          "link": "https://www.linkedin.com/company/notionhq/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Figma",
+          "link": "https://www.linkedin.com/company/figma/",
+          "industry": "Design Services",
+          "location": null
+      },
+      {
+          "name": "Miro",
+          "link": "https://www.linkedin.com/company/mirohq/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Asana",
+          "link": "https://www.linkedin.com/company/asana/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Slack",
+          "link": "https://www.linkedin.com/company/tiny-spec-inc/",
+          "industry": "Technology, Information and Internet",
+          "location": null
+      },
+      {
+          "name": "Zapier",
+          "link": "https://www.linkedin.com/company/zapier/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Stripe",
+          "link": "https://www.linkedin.com/company/stripe/",
+          "industry": "Technology, Information and Internet",
+          "location": null
+      },
+      {
+          "name": "Atlassian",
+          "link": "https://www.linkedin.com/company/atlassian/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Make",
+          "link": "https://www.linkedin.com/company/itsmakehq/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Canva",
+          "link": "https://www.linkedin.com/company/canva/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Webflow",
+          "link": "https://www.linkedin.com/company/webflow-inc-/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "ClickUp",
+          "link": "https://www.linkedin.com/company/clickup-app/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "HubSpot",
+          "link": "https://www.linkedin.com/company/hubspot/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "monday.com",
+          "link": "https://www.linkedin.com/company/mondaydotcom/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Gong",
+          "link": "https://www.linkedin.com/company/gong-io/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Airplane",
+          "link": "https://www.linkedin.com/company/airplanedev/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Databricks",
+          "link": "https://www.linkedin.com/company/databricks/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Airbnb",
+          "link": "https://www.linkedin.com/company/airbnb/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Salesforce",
+          "link": "https://www.linkedin.com/company/salesforce/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "OpenAI",
+          "link": "https://www.linkedin.com/company/openai/",
+          "industry": "Research Services",
+          "location": null
+      }
+  ],
+  "affiliated_companies": [
+      {
+          "name": "Airplane",
+          "link": "https://www.linkedin.com/company/airplanedev/",
+          "industry": "Software Development",
+          "location": null
+      },
+      {
+          "name": "Dopt (acquired by Airtable)",
+          "link": "https://www.linkedin.com/company/dopt/",
+          "industry": "Software Development",
+          "location": null
+      }
+  ],
+  "updates": [],
+  "follower_count": 152323,
+  "acquisitions": {
+      "acquired": [
+          {
+              "linkedin_profile_url": "https://www.linkedin.com/company/walrus-ai",
+              "crunchbase_profile_url": "https://www.crunchbase.com/organization/walrus-ai",
+              "announced_date": {
+                  "day": 21,
+                  "month": 12,
+                  "year": 2021
+              },
+              "price": null
+          },
+          {
+              "linkedin_profile_url": "https://www.linkedin.com/company/airplanedev",
+              "crunchbase_profile_url": "https://www.crunchbase.com/organization/airplane",
+              "announced_date": {
+                  "day": 3,
+                  "month": 1,
+                  "year": 2024
+              },
+              "price": null
+          },
+          {
+              "linkedin_profile_url": "https://www.linkedin.com/company/bayes-technologies",
+              "crunchbase_profile_url": "https://www.crunchbase.com/organization/bayes",
+              "announced_date": {
+                  "day": 11,
+                  "month": 8,
+                  "year": 2021
+              },
+              "price": null
+          }
+      ],
+      "acquired_by": null
+  },
+  "exit_data": [],
+  "extra": {
+      "crunchbase_profile_url": "https://www.crunchbase.com/organization/airtable",
+      "ipo_status": "Private",
+      "crunchbase_rank": 12138,
+      "founding_date": {
+          "day": 1,
+          "month": 1,
+          "year": 2013
+      },
+      "operating_status": "Active",
+      "company_type": "For Profit",
+      "contact_email": "support@airtable.com",
+      "phone_number": null,
+      "facebook_id": "airtableapp",
+      "twitter_id": "airtable",
+      "number_of_funding_rounds": 10,
+      "total_funding_amount": 1400000000,
+      "stock_symbol": null,
+      "ipo_date": null,
+      "number_of_lead_investors": 7,
+      "number_of_investors": 52,
+      "total_fund_raised": null,
+      "number_of_investments": 1,
+      "number_of_lead_investments": null,
+      "number_of_exits": null,
+      "number_of_acquisitions": 3
+  },
+  "funding_data": [
+      {
+          "funding_type": "Secondary Market",
+          "money_raised": null,
+          "announced_date": null,
+          "number_of_investor": null,
+          "investor_list": []
+      },
+      {
+          "funding_type": "Seed Round",
+          "money_raised": 3000000,
+          "announced_date": null,
+          "number_of_investor": 16,
+          "investor_list": []
+      },
+      {
+          "funding_type": "Seed Round",
+          "money_raised": null,
+          "announced_date": null,
+          "number_of_investor": 2,
+          "investor_list": []
+      },
+      {
+          "funding_type": "Series A",
+          "money_raised": 7600000,
+          "announced_date": null,
+          "number_of_investor": 14,
+          "investor_list": []
+      },
+      {
+          "funding_type": "Series B",
+          "money_raised": null,
+          "announced_date": null,
+          "number_of_investor": 2,
+          "investor_list": []
+      },
+      {
+          "funding_type": "Series B",
+          "money_raised": 52000000,
+          "announced_date": null,
+          "number_of_investor": 4,
+          "investor_list": []
+      },
+      {
+          "funding_type": "Series C",
+          "money_raised": 100000000,
+          "announced_date": null,
+          "number_of_investor": 12,
+          "investor_list": []
+      },
+      {
+          "funding_type": "Series D",
+          "money_raised": 185000000,
+          "announced_date": null,
+          "number_of_investor": 8,
+          "investor_list": [
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/caffeinated-capital",
+                  "name": "Caffeinated Capital",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/coatue-management",
+                  "name": "Coatue",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/thrive-capital",
+                  "name": "Thrive Capital",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/crvvc",
+                  "name": "CRV",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/d1-capital-partners",
+                  "name": "D1 Capital Partners",
+                  "type": "organization"
+              }
+          ]
+      },
+      {
+          "funding_type": "Series E",
+          "money_raised": 270000000,
+          "announced_date": null,
+          "number_of_investor": 6,
+          "investor_list": [
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/wndrco",
+                  "name": "WndrCo",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/caffeinated-capital",
+                  "name": "Caffeinated Capital",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/greenoaks-capital-partners",
+                  "name": "Greenoaks",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/thrive-capital",
+                  "name": "Thrive Capital",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/crvvc",
+                  "name": "CRV",
+                  "type": "organization"
+              }
+          ]
+      },
+      {
+          "funding_type": "Series F",
+          "money_raised": 735000000,
+          "announced_date": null,
+          "number_of_investor": 16,
+          "investor_list": [
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/benchmark-vc",
+                  "name": "Benchmark",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": null,
+                  "name": "XN",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/caffeinated-capital",
+                  "name": "Caffeinated Capital",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/showcaseiconiq-growth",
+                  "name": "ICONIQ Growth",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/jpmorgan",
+                  "name": "JP Morgan",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/t--rowe-price",
+                  "name": "T. Rowe Price",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/salesforce-ventures",
+                  "name": "Salesforce Ventures",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/silver-lake-partners",
+                  "name": "Silver Lake",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/d1-capital-partners",
+                  "name": "D1 Capital Partners",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/franklin-templeton",
+                  "name": "Franklin Templeton",
+                  "type": "organization"
+              },
+              {
+                  "linkedin_profile_url": "https://www.linkedin.com/company/friends-and-family-capital",
+                  "name": "Friends & Family Capital",
+                  "type": "organization"
+              }
+          ]
+      }
+  ],
+  "categories": [
+      "collaboration",
+      "database",
+      "developer-tools",
+      "saas-5c4e"
+  ],
+  "customer_list": null
+}

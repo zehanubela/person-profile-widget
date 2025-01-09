@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtable Customers List</title>
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+/>
+</head>
+<body>
+  <div class="container my-5">
+    <div class="d-flex justify-content-center">
+    <img class="mr-3" src="media/imgs/airtable-company-picture.jpeg" alt="Proxycurl Logo" style="width: 100px; height: 100px;">
+    <div class="d-flex flex-column">
+    <div id="company_profile" class="mb-3"></div>
+    <p style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; width: fit-content;">Powered by <a href="https://nubela.co/proxycurl/docs#company-api-company-profile-endpoint">Company Profile API</a></p>
+    </div>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+      <div style="flex: 1;">
+        <h1>Airtable Customers</h1>
+        <div id="customers"></div>
+        <p style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; width: fit-content;">Powered by <a href="https://nubela.co/proxycurl/docs#customer-api-experimental">Proxycurl Customer Listing API</a></p>
+      </div>
+      <div style="flex: 1;">
+        <h1>Airtable Employees</h1>
+        <p>We have database of 714 employees of Airtable</p>
+        <div id="employees"></div>
+        <p style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; width: fit-content;">Powered by <a href="https://nubela.co/proxycurl/docs#company-api-employee-listing-endpoint">Proxycurl Employee Listing API</a></p>
+      </div>
+    </div>
+
+    <h1>Airtable Customers List: FAQ</h1>
+
+    <div id="faq">
+
+      <h4>What is Airtable?</h4>
+      <p>Airtable is a cloud-based platform that allows you to create and manage databases, spreadsheets, and databases. It is a powerful tool that allows you to create and manage databases, spreadsheets, and databases.</p>
+
+      <h4>How many customers does Airtable have?</h4>
+      <p>Airtable has 100,000 customers.</p>
+
+      <h4>Who uses Airtable?</h4>
+      <p>Airtable is used by many companies, including Google, Facebook, and Amazon.</p>
+    
+      <h4>What industries is Airtable most popular in?</h4>
+      <p>
+        Airtable is most popular in the following industries:
+        <ul>
+          <li>Software</li>
+          <li>Marketing</li>
+          <li>Sales</li>
+        </ul>
+      </p>
+
+      <h4>What is most common alternative to Airtable?</h4>
+      <p>
+        The most common alternative to Airtable is Google Sheets.
+      </p>
+    </div>
+  </div>
+</body>
+<script>
+  fetch('/airtable_customers.json')
+    .then(response => response.json())
+    .then(data => {
+      const customersDiv = document.getElementById('customers');
+      data.companies.slice(0, 3).forEach(company => {
+        const companyName = company.linkedin_company_profile_url.split('/')[4].replace('-', ' ')
+        const companyInfo = `
+          <div class="mb-3">
+            <span class="text-capitalize d-block font-weight-bold">${companyName}</span>
+            <a class="d-block" href="${company.linkedin_company_profile_url}" target="_blank">${company.linkedin_company_profile_url}</a>
+            ${company.twitter_profile_url ? `Twitter: <a class="d-inline" href="${company.twitter_profile_url}" target="_blank">${company.twitter_profile_url}</a>` : ''}
+            ${company.email ? `<p>Email: ${company.email}</p>` : ''}
+          </div>
+        `;
+        customersDiv.innerHTML += companyInfo;
+      });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
+<script>
+  fetch('/airtable_employees.json')
+    .then(response => response.json())
+    .then(data => {
+      const employeesDiv = document.getElementById('employees');
+      data.employees.slice(0, 3).forEach(employee => {
+        const employeeInfo = `
+          <div>
+            <span class="d-block font-weight-bold">${employee.profile.full_name}</span>
+            <a class="d-block" href="${employee.profile_url}" target="_blank">${employee.profile_url}</a>
+            <p>${employee.profile.occupation || 'N/A'}</p>
+          </div>
+        `;
+        employeesDiv.innerHTML += employeeInfo;
+      });
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
+<script>
+  fetch('/airtable_company_profile.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      const companyProfileDiv = document.getElementById('company_profile');
+      companyProfileDiv.innerHTML = data.description;
+    })
+    .catch(error => console.error('Error fetching data:', error));
+</script>
+</html>

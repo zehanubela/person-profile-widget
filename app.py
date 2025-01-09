@@ -7,14 +7,31 @@ from flask import request
 app = Flask(__name__, static_folder='media')
 app.config['BASE_URL'] = '/'
 
+@app.route('/new')
+def new():
+    return render_template('new.html')  
+
+@app.route('/airtable_customers.json')
+def airtable_customers():
+    return render_template('airtable_customers.json')
+
+@app.route('/airtable_employees.json')
+def airtable_employees():
+    return render_template('airtable_employees.json')
+
+@app.route('/airtable_company_profile.json')
+def airtable_company_profile():
+    return render_template('airtable_company_profile.json')
+
 @app.route("/")
 def index():
-    current_user = None
-    response = make_response(render_template(
-        'linkedin_xray_tool.html.jinja',
-        current_user=current_user))
-    return response
+    # current_user = None
+    # response = make_response(render_template(
+    #     'linkedin_xray_tool.html.jinja',
+    #     current_user=current_user))
+    # return response
     # return render_template('index.html')
+    return render_template('new.html')  
 
 @app.route('/linkedin-xray-tool', methods=['GET','POST'])
 def linkedin_xray_tool_post():

@@ -1,0 +1,55 @@
+{
+  "companies": [
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/colgate-palmolive",
+          "twitter_profile_url": "https://twitter.com/cp_news",
+          "email": null
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/facebook",
+          "twitter_profile_url": "https://twitter.com/meta",
+          "email": null
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/ef-education-first",
+          "twitter_profile_url": "https://twitter.com/ef",
+          "email": null
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/canon-emea",
+          "twitter_profile_url": "https://twitter.com/canonemea",
+          "email": "canon@canon.no"
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/elance-odesk",
+          "twitter_profile_url": "https://twitter.com/odesk",
+          "email": null
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/amt-group",
+          "twitter_profile_url": null,
+          "email": "info@amt.ru"
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/elsyndicate",
+          "twitter_profile_url": null,
+          "email": null
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/equality-california",
+          "twitter_profile_url": "https://twitter.com/eqca",
+          "email": "press@eqca.org"
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/draft-dev",
+          "twitter_profile_url": "https://twitter.com/draftdev",
+          "email": "karl@draft.dev"
+      },
+      {
+          "linkedin_company_profile_url": "https://www.linkedin.com/company/estrrado-technologies",
+          "twitter_profile_url": "https://twitter.com/estrrado",
+          "email": null
+      }
+  ],
+  "next_page": "https://nubela.co/proxycurl/api/customers?linkedin_company_profile_url=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fairtable%2F&after=the-affari-project"
+}
