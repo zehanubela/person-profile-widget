@@ -21,6 +21,7 @@
     <div style="display: flex; flex-direction: row;">
       <div style="flex: 1;">
         <h1>Airtable Customers</h1>
+        <p>We have database of 244 probable corporate customers of Airtable</p>
         <div id="customers"></div>
         <p style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; width: fit-content;">Powered by <a href="https://nubela.co/proxycurl/docs#customer-api-experimental">Proxycurl Customer Listing API</a></p>
       </div>
@@ -44,7 +45,7 @@
 
       <h4>Who uses Airtable?</h4>
       <p>Airtable is used by many companies, including Google, Facebook, and Amazon.</p>
-    
+
       <h4>What industries is Airtable most popular in?</h4>
       <p>
         Airtable is most popular in the following industries:
@@ -67,7 +68,7 @@
     .then(response => response.json())
     .then(data => {
       const customersDiv = document.getElementById('customers');
-      data.companies.slice(0, 3).forEach(company => {
+      data.companies.slice(0, 10).forEach(company => {
         const companyName = company.linkedin_company_profile_url.split('/')[4].replace('-', ' ')
         const companyInfo = `
           <div class="mb-3">
@@ -87,7 +88,7 @@
     .then(response => response.json())
     .then(data => {
       const employeesDiv = document.getElementById('employees');
-      data.employees.slice(0, 3).forEach(employee => {
+      data.employees.slice(0, 10).forEach(employee => {
         const employeeInfo = `
           <div>
             <span class="d-block font-weight-bold">${employee.profile.full_name}</span>
